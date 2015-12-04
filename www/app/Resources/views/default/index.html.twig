@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Zero Waste Demo</h1>
+    </div>
+    <p><a class="btn btn-primary-outline" href="{{ path('security_login') }}">Login</a>
+        <a class="btn btn-secondary-outline" href="{{ path('users_new') }}">Register</a>
+        <a href="{{ path('users_create') }}" class="btn btn-primary-outline">Create</a>
+        <a href="{{ path('security_logout') }}" class="btn btn-primary-outline">Logout</a></p>
+{% endblock %}

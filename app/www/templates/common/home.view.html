@@ -1,0 +1,18 @@
+<ion-view title="{{ vm.title }}">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-text-wrap" ng-repeat="user in vm.data.users">
+                <h2>ID: <b>{{ user.id }}</b></h2>
+                <h3>Username: <b>{{ user.username }}</b></h3>
+                <h3>Email: <b>{{ user.email }}</b></h3>
+            </ion-item>
+        </ion-list>
+
+        <!--<ion-content padding="true">-->
+            <!--<form ng-submit="newUser()">-->
+                <!--<label>New User:</label>-->
+                <!--<textarea ng-model="userData.text"></textarea>-->
+                <!--<button type="submit" class="button button-positive button-block">Create</button>-->
+            <!--</form>-->
+    </ion-content>
+</ion-view>

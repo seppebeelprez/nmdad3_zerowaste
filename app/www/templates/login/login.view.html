@@ -1,0 +1,24 @@
+<ion-view title="{{ vm.title }}" hide-nav-bar="true" id="login_page">
+    <ion-content scroll="false">
+
+        <div id="login_logo"></div>
+
+        <div class="list login_form">
+            <label class="item item-input">
+                <span class="input-label"><i class="icon ion-ios-person-outline"></i></span>
+                <input id="loginUsername" type="text" placeholder="{{ vm.form.login.username }}">
+            </label>
+            <label class="item item-input">
+                <span class="input-label"><i class="icon ion-ios-locked-outline"></i></span>
+                <input id="loginPassword" type="password" placeholder="{{ vm.form.login.password }}">
+            </label>
+        </div>
+        <button class="button button-full login_button" ng-click="vm.loginUser()">Sign in</button>
+
+        <ion-footer-bar class="login_extra">
+            <p><a nav-direction="forward" href="#/register">Create account</a></p>
+            <p class="middle"><a href="#">Visit</a></p>
+            <p><a href="#">Reset password?</a></p>
+        </ion-footer-bar>
+    </ion-content>
+</ion-view>

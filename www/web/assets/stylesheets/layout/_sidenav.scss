@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the sidenav of the site/application.
+// -----------------------------------------------------------------------------
+@import "../themes/default";
+
+.mdl-layout__drawer.is-visible {
+	background-color: #ffffff;
+}
+
+span.mdl-layout-title.sidenav_logo{
+	color: $regular_color;
+}
+
+.mdl-layout__drawer.mdl-navigation.a:hover {
+	background-color: $regular_color;
+}
+
+.side_nav_title {
+  background-color: $mid_dark_color;
+  height: 112px;
+
+  .sidenav_img {
+    margin-top: 24px;
+    width: 160px;
+    height: 100px;
+    background-image: url("images/logo_new_white_long.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.mdl-layout__drawer.is-visible {
+  border: none;
+}
+

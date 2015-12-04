@@ -1,0 +1,11 @@
+<ion-view title="{{ vm.title }}">
+    <ion-nav-buttons side="right">
+        <!--<button class="button button-icon icon ion-ios-arrow-thin-left" ng-click="myGoBack()"></button>-->
+    </ion-nav-buttons>
+
+    <ion-content>
+        <button ng-click="camera.getPhoto()" class="button button-block button-primary">Take Photo</button>
+           <img ng-src="{{ camera.lastPhoto }}" style="max-width: 100%">
+           photo: <code>{{ camera.lastPhotoMessage }}</code>
+    </ion-content>
+</ion-view>

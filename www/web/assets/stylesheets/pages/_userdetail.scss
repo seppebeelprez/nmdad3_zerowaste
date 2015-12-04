@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the user detail page.
+// -----------------------------------------------------------------------------
+@import "../themes/default";
+
+.mdl_user_detail_table_left {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.left_table_title {
+  color: $mid_dark_color;
+}
+
+.mdl_grid_user_detail {
+  padding: 0;
+}
+
+@media (min-width: 840px) {
+  .adapted_width_mdl_cell_user_detail {
+    padding: 0;
+  }
+
+  .adapted_width_mdl_cell_user_detail.mdl-cell {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .adapted_width_mdl_cell_user_detail .mdl-cell--4-col-tablet {
+    width: calc(100% - 16px);
+  }
+
+  .user_detail_profile_picture {
+    width: 100%;
+  }
+
+}
+
+.mdl-data-table tbody tr .mdl_table_head_title {
+  background-color: $regular_color;
+  color: white;
+  font-size: 1.2rem;
+  padding-left: 24px;
+  text-align: left;
+}
+
+.title_user_detail_adapted {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

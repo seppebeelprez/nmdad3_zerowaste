@@ -1,0 +1,156 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="content_wrapper title_user_detail_adapted">
+        <h1 class="mdl-layout__title title_user_detail_adapted">User {{ user.id }}: detailview</h1>
+    </div>
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--8-col-phone mdl_table_user_detail">
+            <div class="mdl-grid adapted_width_mdl_cell_user_detail">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-cell--8-col-phone">
+                    {#<span class="left_table_title">User details</span>#}
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp mdl_user_detail_table_left">
+                        <tbody>
+                            <tr>
+                                <td class="mdl_table_head_title">User details</td>
+                                <td class="mdl_table_head_title"></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Id</td>
+                                <td>{{ user.id }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Role</td>
+                                <td>{{ user.roles[0] }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Username</td>
+                                <td>{{ user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Created_at</td>
+                                <td>{{ user.createdAt|date('d-m-Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Enabled_at</td>
+                                <td>{{ user.enabledAt|date('d-m-Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Locked_at</td>
+                                <td>
+                                    {% if user.lockedAt is null %}
+                                    {% else %}
+                                        {{ user.lockedAt|date('d-m-Y') }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Expired_at</td>
+                                <td>
+                                    {% if user.expiredAt is null %}
+                                    {% else %}
+                                        {{ user.expiredAt|date('d-m-Y') }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Deleted_at</td>
+                                <td>
+                                    {% if user.deletedAt is null %}
+                                    {% else %}
+                                        {{ user.deletedAt|date('d-m-Y') }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-cell--8-col-phone">
+                    {#<span class="left_table_title">Profile details</span>#}
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp mdl_user_detail_table_left">
+                        <tbody>
+                            <tr>
+                                <td class="mdl_table_head_title">Profile details</td>
+                                <td class="mdl_table_head_title"></td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">First Name</td>
+                                <td>{{ user.profile.firstName }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Last Name</td>
+                                <td>{{ user.profile.lastName }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Birthday</td>
+                                <td>{{ user.profile.birthday|date("d/m/Y") }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Created_at</td>
+                                <td>{{ user.profile.createdAt|date('d-m-Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Enabled_at</td>
+                                <td>{{ user.profile.enabledAt|date('d-m-Y') }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet testtest">
+            <div class="mdl-grid mdl_grid_user_detail">
+                {% for report in user.reports %}
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--8-col-phone">
+                        <div class="mdl-shadow--2dp">
+                            <div class="mdl-card__title mdl_report_image" style="background-image:url({{ report.uri }})">
+                                {#<h2 class="mdl-card__title-text mdl_report_title">{{ report.id }}</h2>#}
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border mdl_report_actions">
+                                <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                                   href="{{ url('reports_show',{ 'id': report.id }) }}">
+                                    <i class="material-icons">visibility</i>
+                                </a>
+
+                                <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                                   href="{{ url('reports_delete',{ 'id': report.id }) }}">
+                                    <i class="material-icons">delete</i>
+                                </a>
+
+                                <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                                   href="{{ url('reports_edit',{ 'id': report.id }) }}">
+                                    <i class="material-icons">mode_edit</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-action-btn horizontal click-to-toggle">
+        <a class="btn-floating btn-large red">
+            <i class="material-icons">more_horiz</i>
+        </a>
+        <ul>
+            <li><a href="{{ url('users_delete',{ 'id': user.id }) }}" class="btn-floating list"><i
+                            class="material-icons">delete</i></a></li>
+            <li><a href="{{ url('users_edit',{ 'id': user.id }) }}" class="btn-floating list"><i
+                            class="material-icons">mode_edit</i></a></li>
+            <li><a href="{{ url('users') }}" class="btn-floating list"><i class="material-icons">view_list</i></a></li>
+        </ul>
+    </div>
+
+    {#<div class="content_wrapper">#}
+        {#<a href="{{ path('users') }}">#}
+            {#<div class="mdl-button mdl-button--colored mdl-js-button page_button">#}
+                {#Back#}
+            {#</div>#}
+        {#</a>#}
+    {#</div>#}
+{% endblock %}

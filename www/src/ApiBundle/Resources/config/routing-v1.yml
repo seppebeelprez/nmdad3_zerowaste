@@ -1,0 +1,16 @@
+users:
+    resource: ApiBundle\Controller\UsersRestController
+    type:     rest
+
+reports:
+    resource: ApiBundle\Controller\ReportsRestController
+    type:     rest
+
+profiles:
+    resource: ApiBundle\Controller\ProfilesRestController
+    type:     rest
+
+default:
+    resource: ApiBundle\Controller\DefaultController
+    type:     rest
+

@@ -1,0 +1,18 @@
+<ion-view title="{{ vm.title }}" id="myreports_detail_view">
+    <ion-nav-buttons side="right">
+        <!--<button class="button button-icon icon ion-ios-arrow-thin-left" ng-click="myGoBack()"></button>-->
+    </ion-nav-buttons>
+
+    <ion-content>
+
+        <div class="myreport_list">
+            <a ng-repeat="report in vm.data.reports | orderBy:'-created_at'" href="#/myreports/{{report.id}}/edit">
+                <div class="item item-thumbnail-left myreport_item">
+                    <img class="full-image" data-ng-src="{{report.uri}}">
+                    <div><span><i class="ion ion-map"></i> {{ report.longitude }} {{ report.latitude }}</span></div>
+                    <div><span><i class="ion ion-pizza"></i> {{ report.type }}</span></div>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

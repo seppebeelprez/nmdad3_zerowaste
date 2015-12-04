@@ -1,0 +1,49 @@
+<ion-view title="{{ vm.title }}">
+    <ion-nav-buttons side="right">
+        <!--<button class="button button-icon icon ion-ios-arrow-thin-left" ng-click="myGoBack()"></button>-->
+    </ion-nav-buttons>
+
+    <ion-content scroll="false">
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">{{ vm.form.report.description }}</span>
+                <input ng-model="vm.report.description" type="text" placeholder="{{ vm.form.report.description }}">
+            </label>
+            <!--<label class="item item-input item-floating-label">-->
+                <!--<span class="input-label">{{ vm.form.report.longitude }}</span>-->
+                <!--<input ng-model="vm.report.longitude" type="text" placeholder="{{ vm.form.report.longitude }}">-->
+            <!--</label>-->
+            <!--<label class="item item-input item-floating-label">-->
+                <!--<span class="input-label">{{ vm.form.report.latitude }}</span>-->
+                <!--<input ng-model="vm.report.latitude" type="text" placeholder="{{ vm.form.report.latitude }}">-->
+            <!--</label>-->
+            <!--<label class="item item-input item-floating-label">-->
+                <!--<span class="input-label">{{ vm.form.report.type }}</span>-->
+                <!--<input ng-model="vm.report.type" type="text" placeholder="{{ vm.form.report.type }}">-->
+            <!--</label>-->
+            <label class="item item-input item-select">
+                <div class="input-label">{{ vm.form.report.type }}</div>
+                <select ng-model="vm.report.type">
+                    <option value="PMD" selected="selected">PMD</option>
+                    <option value="Rest">Rest</option>
+                    <option value="Glass">Glass</option>
+                    <option value="Wood">Wood</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Other">Other</option>
+                </select>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">{{ vm.form.report.uri }}</span>
+                <input ng-model="vm.report.uri" type="text" placeholder="{{ vm.form.report.uri }}">
+            </label>
+        </div>
+
+        <div class="button_bottom">
+            <div class="button_footer">
+                <button class="button button-block button-balanced no_margin" ng-click="vm.post()">Post</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,157 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the reports of the site/application.
+// -----------------------------------------------------------------------------
+@import "../themes/default";
+
+.mdl_report_image {
+  padding: 0;
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mdl_layout_title_detail {
+  color: gray;
+  font-size: 1.6rem;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+.mdl_report_title {
+  font-size: 1.4rem;
+  padding: 2% 4%;
+  color: $mid_dark_color;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  p {
+    margin-left: 8px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+  }
+}
+
+.mdl_report_actions {
+  i {
+    color: $mid_dark_color;
+  }
+
+  .mdl-button.mdl-js-button.mdl-button--icon.mdl-button--colored:hover {
+    background-color: $mid_dark_color;
+  }
+
+  .mdl-button.mdl-js-button.mdl-button--icon.mdl-button--colored:hover i{
+    color: white;
+  }
+}
+
+
+.mdl_report_supporting_text_detail {
+  width: 100%;
+}
+
+.mdl_report_supporting_text_detail_left,
+.mdl_report_supporting_text_detail_right {
+  width: 100%;
+}
+
+.mdl_report_supporting_text_detail_left {
+  font-size: 1.4rem;
+
+  .description_div {
+    margin-bottom: 8px;
+  }
+
+  span {
+    color: black;
+  }
+
+  div {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+
+  .mdl_report_supporting_text_detail_left_description {
+    line-height: 1.8rem;
+    padding-right: 24px;
+  }
+}
+
+.mdl_report_title_detail {
+  background-color: aliceblue;
+}
+
+.mdl_report_supporting_text_detail_right {
+  display: inline;
+
+  .mdl_report_image_detail {
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .mdl_report_supporting_text_detail_left,
+  .mdl_report_supporting_text_detail_right {
+    width: 50%;
+  }
+
+  .mdl_report_supporting_text_detail_left {
+    float: left;
+  }
+
+  .mdl_report_supporting_text_detail_right {
+    display: inline;
+
+    .mdl_report_image_detail img{
+      width: 80%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .mdl_report_supporting_text_detail_left,
+  .mdl_report_supporting_text_detail_right {
+    width: 50%;
+  }
+
+  .mdl_report_supporting_text_detail_left {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .mdl_report_supporting_text_detail_left {
+  }
+
+  .mdl_report_supporting_text_right {
+    display: inline;
+
+    .mdl_report_image_detail img{
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+}
+
+.posted_by_href {
+  color: $mid_dark_color;
+  margin-left: 8px;
+}
+
+.posted_by_href:hover {
+  text-decoration: none;
+  color: $dark_color;
+}

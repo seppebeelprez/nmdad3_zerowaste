@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme new_form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+    <div class="content_wrapper">
+        <h1>Make a new report</h1>
+        {{ form_start(new_form) }}
+        {{ form_widget(new_form) }}
+        <button type="submit" class="btn btn-primary-outline">Create</button>
+        <a class="btn btn-secondary-outline" href="{{ path('reports') }}">Back</a>
+        {{ form_end(new_form) }}
+    </div>
+{% endblock %}

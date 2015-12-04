@@ -1,0 +1,15 @@
+<ion-view title="{{ vm.title }}">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-text-wrap" ng-repeat="profile in vm.data">
+                <div class="list">
+                    <h2>ID: <b>{{ profile.id }}</b></h2>
+                    <h3>Firstname: <b>{{ profile.first_name }}</b></h3>
+                    <h3>Lastname: <b>{{ profile.last_name }}</b></h3>
+                    <h3>Birthday: <b>{{ profile.birthday }}</b></h3>
+                    <h3>User ID: <b>{{ profile.user.id}}</b></h3>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

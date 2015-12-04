@@ -1,0 +1,65 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="search_form">
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                    <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="sample6">
+                    <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="content_wrapper">
+        <h1 class="mdl-layout__title">Reports: overview</h1>
+    </div>
+
+    <div class="mdl-grid content_wrapper">
+        {% for report in reports %}
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--8-col-phone">
+                <div class="mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl_report_image" style="background-image:url({{ report.uri }})">
+                        <h2 class="mdl-card__title-text mdl_report_title">{{ report.id }} <p> {{ report.user.username
+                                }}</p></h2>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border mdl_report_actions">
+                        <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                           href="{{ url('reports_show',{ 'id': report.id }) }}">
+                            <i class="material-icons">visibility</i>
+                        </a>
+
+                        <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                           href="{{ url('reports_delete',{ 'id': report.id }) }}">
+                            <i class="material-icons">delete</i>
+                        </a>
+
+                        <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                           href="{{ url('reports_edit',{ 'id': report.id }) }}">
+                            <i class="material-icons">mode_edit</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+            <a href="{{ url('reports_new') }}" class="btn-floating btn-large red">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
+
+        {#<div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">#}
+            {#<a class="btn-floating btn-large red">#}
+                {#<i class="material-icons">more_horiz</i>#}
+            {#</a>#}
+            {#<ul>#}
+                {#<li><a class="btn-floating list"><i class="material-icons">add</i></a></li>#}
+            {#</ul>#}
+        {#</div>#}
+    </div>
+{% endblock %}

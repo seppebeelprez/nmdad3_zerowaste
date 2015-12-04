@@ -1,0 +1,50 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 10
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+#        in_memory:
+#            memory: ~
+#        in_memory:
+#            memory:
+#                users:
+#                    ryanryan:
+#                        password: $2a$12$LCY0MefVIEc3TYPHV9SNnuzOfyr2p/AXIGoQJEDs4am4JwhNz/jli
+#                        roles: 'ROLE_USER'
+#                    administrator:
+#                        password: $2a$12$cyTWeE9kpq1PjqKFiWUZFuCRPwVyAZwm4XzMZ1qPUFl7/flCM3V0G
+#                        roles: 'ROLE_ADMIN'
+        default:
+            entity: { class: AppBundle:User, property: username }
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            form_login:
+                login_path: security_login
+                check_path: security_login_check
+                username_parameter: appbundle_security_login[username]
+                password_parameter: appbundle_security_login[password]
+                always_use_default_target_path: true
+                default_target_path: homepage
+            logout:
+                path:   security_logout
+                target: security_login
+        default:
+            anonymous: ~
+            http_basic: ~
+    #access_control:
+        # require ROLE_ADMIN for /admin*
+        #- { path: ^/api/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        #- { path: ^/app/, roles: ROLE_ADMIN }

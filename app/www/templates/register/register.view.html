@@ -1,0 +1,56 @@
+<ion-view hide-nav-bar="true" id="register_page">
+
+    <ion-header-bar>
+        <a nav-direction="back" href="#/login"><i class="ion ion-android-close"></i></a><span>{{ vm.title }}</span>
+    </ion-header-bar>
+    <ion-content class="register_content" scroll="false">
+        <form name="form" novalidate ng-submit="form.submit(registrationForm.$valid)">
+            <div class="list register_form">
+
+                <div class="form-group">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">{{ vm.form.user.username }}</span>
+                        <input ng-model="vm.user.username" name="username" required type="text"
+                               placeholder="{{ vm.form.user.username }}">
+                    </label>
+                    <!--<div class="registerValidation" ng-show="form.$submitted || form.username.$touched">-->
+                        <!--<span ng-show="form.username.$error.required">Fill in your username</span>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="form-group">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">{{ vm.form.user.email }}</span>
+                        <input ng-model="vm.user.email" name="email" required type="email"
+                               placeholder="{{ vm.form.user.email }}">
+                    </label>
+                    <!--<div class="registerValidation" ng-show="form.$submitted || form.email.$touched">-->
+                        <!--<span ng-show="form.email.$error.required">Fill in your email</span>-->
+                        <!--<span ng-show="form.email.$error.email">This is not a valid email.</span>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="form-group">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">{{ vm.form.user.password }}</span>
+                        <input ng-model="vm.user.password" name="password" required type="password"
+                               placeholder="{{ vm.form.user.password }}">
+                    </label>
+                    <!--<div class="registerValidation" ng-show="form.$submitted || form.password.$touched">-->
+                        <!--<span ng-show="form.password.$error.required">Fill in your password</span>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="form-group">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">{{ vm.form.user.confirmPassword }}</span>
+                        <input ng-model="vm.user.password_verify" required type="password" name="confirmPassword"
+                               placeholder="{{ vm.form.user.confirmPassword }}">
+                    </label>
+                </div>
+
+            </div>
+            <button class="button button-full register_button" ng-click="vm.registerUser()">Create</button>
+        </form>
+    </ion-content>
+</ion-view>

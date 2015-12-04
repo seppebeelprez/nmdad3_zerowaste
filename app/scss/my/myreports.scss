@@ -1,0 +1,60 @@
+//.list_myreports.item span{
+//  color: #3e3e3e;
+//}
+//
+//.list_myreports.item-thumbnail-left {
+//  min-height: 120px;
+//}
+//
+//.list_myreports .item-thumbnail-left > img:first-child {
+//  position: absolute;
+//  top: 16px;
+//  left: 16px;
+//  max-width: 84px;
+//  max-height: 84px;
+//  width: 100%;
+//  height: 100%;
+//}
+
+#myreports_view {
+//  background-color: rgba(212, 162, 14, 0.26);
+}
+
+.myreport_list a {
+  text-decoration: none;
+}
+
+.myreport_item {
+  padding: 16px 0 8px 120px;
+  min-height: 132px;
+}
+
+.myreport_item > img:first-child {
+  padding: 8px 0 0 0;
+  position: absolute;
+  left: 10px;
+  max-width: 100px;
+  max-height: 100px;
+  width: 100%;
+  height: 100%;
+}
+
+.button_footer button {
+  margin-bottom: 0 !important;
+}
+
+.mdl_report_image {
+  height: 200px;
+  background-size: cover;
+  width: 100%;
+}
+
+.button_bottom {
+  position: absolute; bottom: 0; width: 100%
+}
+
+.cover_image {
+  height:100px;
+  width:100%;
+  display: block;
+}

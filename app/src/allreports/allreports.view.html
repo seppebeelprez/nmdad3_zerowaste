@@ -1,0 +1,25 @@
+<ion-view title="{{ vm.title }}">
+    <ion-nav-buttons side="right">
+        <!--<button class="button button-icon icon ion-ios-arrow-thin-left" ng-click="myGoBack()"></button>-->
+    </ion-nav-buttons>
+
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-text-wrap" ng-repeat="report in vm.data.reports">
+                <div class="list card">
+                    <div class="item item-avatar">
+                        <img src="http://lorempixel.com/40/40/people">
+                        <h2>{{  }}</h2>
+                        <p>November 05, 1955</p>
+                    </div>
+                    <h2>ID: <b>{{ report.id }}</b></h2>
+                    <h3>Description: <b>{{ report.description }}</b></h3>
+                    <h3>LONG: <b>{{ report.longitude }}</b></h3>
+                    <h3>LAT: <b>{{ report.latitude }}</b></h3>
+                    <h3>Type: <b>{{ report.type }}</b></h3>
+                    <h3>Image: <b>{{ report.uri }}</b></h3>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

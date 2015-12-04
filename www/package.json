@@ -1,0 +1,19 @@
+{
+  "name": "App.WWW",
+  "version": "0.0.0",
+  "devDependencies": {
+    "chart.js": "^1.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-ruby-sass": "^2.0.5",
+    "jquery": "^2.1.4",
+    "wrench": "^1.5.8",
+    "rimraf": "2.2.8"
+  },
+  "dependencies": {
+    "material-design-lite": "^1.0.6"
+  }
+}

@@ -1,0 +1,25 @@
+<ion-view title="{{ vm.title }}" id="myreports_view">
+    <ion-nav-buttons side="right">
+        <!--<button class="button button-icon icon ion-ios-arrow-thin-left" ng-click="myGoBack()"></button>-->
+    </ion-nav-buttons>
+
+    <ion-content scroll="false">
+        </div>
+        <div class="myreport_list">
+            <div class="cover-image" ng-style="{'background-image' : 'url( {{ vm.report.uri }} )'}"></div>
+            <div ng-style="{'background-image':'url(' + {{ vm.report.uri }} + ')'}"></div>
+            <!--<img src="{{vm.report.uri}}" alt="">-->
+            <span>{{ vm.report.city }} | {{ vm.report.postalcode }}</span>
+            <div class="item item-thumbnail-left myreport_item">
+                <div><span><i class="ion ion-map"></i> {{ vm.report.longitude }} {{ vm.report.latitude }}</span></div>
+                <div><span><i class="ion ion-pizza"></i> {{ vm.report.type }}</span></div>
+            </div>
+        </div>
+
+        <div class="button_bottom">
+            <div style="text-align: center" class="button_footer">
+                <button class="button button-block button-balanced no_margin" ng-click="vm.delete()">Delete</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

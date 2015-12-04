@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the search of the site/application.
+// -----------------------------------------------------------------------------
+@import "../themes/default";
+
+.search_form {
+  background-color: $regular_color;
+  padding: 0 2%;
+
+  .mdl-textfield .mdl-button {
+    color: white;
+    bottom: 8px;
+  }
+
+  .mdl-button:hover {
+    background-color: $mid_light_color;
+  }
+
+  .mdl-textfield {
+    padding: 10px 0;
+  }
+
+  .mdl-textfield__input {
+    font-family: "Helvetica Neue Light ", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    color: white;
+    border-bottom: 0.5px solid $mid_light_color;
+  }
+
+  .mdl-textfield__label:after {
+    background-color: $mid_light_color;
+  }
+}
